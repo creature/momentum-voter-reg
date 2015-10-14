@@ -1,7 +1,7 @@
 class VoterRegistrationActionsController < ApplicationController
   def index
     if params[:location]
-      @voter_registration_actions = voter_registration_action.near(params[:location])
+      @voter_registration_actions = VoterRegistrationAction.near(params[:location])
     else
       @voter_registration_actions = []
     end
