@@ -1,0 +1,12 @@
+<h1>Find your local voter registration drive</h1>
+
+<%= form_tag nil, method: :get do %>
+  <%= text_field_tag :location %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<ul>
+  <% @voter_registration_actions.each do |voter_registration_action| %>
+    <li><%= link_to voter_registration_action.name, voter_registration_action %>: <%= voter_registration_action.distance_from(params[:location]).round(1) %> miles away</li>
+  <% end %>
+</ul>

@@ -1,0 +1,43 @@
+<%= form_for @voter_registration_action do |form| %>
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+
+  <fieldset class="gllpLatlonPicker">
+    <input type="text" class="gllpSearchField">
+    <input type="button" class="gllpSearchButton" value="search">
+    <div class="gllpMap">Google Maps</div>
+    <input type="hidden" class="gllpLatitude" value="53.12072040641122"/>
+    <input type="hidden" class="gllpLongitude" value="-1.2265171875000078"/>
+    <input type="hidden" class="gllpZoom" value="5"/>
+  </fieldset>
+
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script src="/javascripts/jquery-gmaps-latlon-picker.js"></script>
+
+  <p>
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude %>
+  </p>
+  <p>
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude %>
+  </p>
+  <p>
+    <%= form.label :meeting_point %>
+    <%= form.text_area :meeting_point %>
+  </p>
+  <p>
+    <%= form.label :time %>
+    <%= form.text_field :time %>
+  </p>
+  <p>
+    <%= form.label :organiser %>
+    <%= form.text_field :organiser %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

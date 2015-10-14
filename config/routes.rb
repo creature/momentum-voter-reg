@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :actions
+  resources :voter_registration_actions
 end
