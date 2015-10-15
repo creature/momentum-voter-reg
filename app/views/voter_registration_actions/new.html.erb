@@ -1,2 +1,4 @@
 <h1>Create a new action</h1>
-<%= render partial: 'form' %>
+<%= form_for @voter_registration_action do |form| %>
+  <%= render partial: 'form', locals: {form: form} %>
+<% end %>

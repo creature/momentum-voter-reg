@@ -1,0 +1,5 @@
+<ul>
+  <% @voter_registration_actions.each do |voter_registration_action| %>
+    <li><%= link_to voter_registration_action.name, edit_admin_voter_registration_action_path(voter_registration_action) %></li>
+  <% end %>
+</ul>

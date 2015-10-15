@@ -1,0 +1,4 @@
+<h1>Edit action</h1>
+<%= form_for [:admin, @voter_registration_action] do |form| %>
+  <%= render partial: 'voter_registration_actions/form', locals: {form: form} %>
+<% end %>
