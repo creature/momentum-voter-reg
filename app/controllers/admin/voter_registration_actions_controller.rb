@@ -16,6 +16,6 @@ class Admin::VoterRegistrationActionsController < ApplicationController
 
   private
   def voter_registration_action_params
-    params.require(:voter_registration_action).permit(:published, :name, :latitude, :longitude, :meeting_point, :time, :organiser_name, :organiser_phone, :organiser_email, :organiser_address, :fb_event_page, :url)
+    params.require(:voter_registration_action).permit(:published, :name, :latitude, :longitude, :meeting_point, :time, :organiser_name, :organiser_phone, :organiser_email, :organiser_address, :fb_event_page, :url, :organiser_phone_public, :organiser_email_public)
   end
 end

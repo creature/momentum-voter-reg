@@ -43,8 +43,16 @@
     <%= form.text_field :organiser_email %>
   </p>
   <p>
+    <%= form.label :organiser_email_public, "Can we publish this email address online?" %>
+    <%= form.check_box :organiser_email_public %>
+  </p>
+  <p>
     <%= form.label :organiser_phone %>
     <%= form.text_field :organiser_phone %>
+  </p>
+  <p>
+    <%= form.label :organiser_phone_public, "Can we publish this phone number online?" %>
+    <%= form.check_box :organiser_phone_public %>
   </p>
   <p>
     <%= form.label :organiser_address %>
