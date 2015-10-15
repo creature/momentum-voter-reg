@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151015122721) do
+ActiveRecord::Schema.define(version: 20151015170154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20151015122721) do
     t.text     "meeting_point"
     t.datetime "time"
     t.string   "organiser_name"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.string   "organiser_phone"
     t.boolean  "organiser_phone_public"
     t.string   "organiser_email"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20151015122721) do
     t.boolean  "organiser_address_public"
     t.string   "fb_event_page"
     t.string   "url"
+    t.boolean  "published",                default: false, null: false
   end
 
 end

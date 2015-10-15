@@ -1,14 +1,14 @@
 class VoterRegistrationActionsController < ApplicationController
   def index
     if params[:location]
-      @voter_registration_actions = VoterRegistrationAction.near(params[:location])
+      @voter_registration_actions = VoterRegistrationAction.published.near(params[:location])
     else
       @voter_registration_actions = []
     end
   end
 
   def show
-    @voter_registration_action = VoterRegistrationAction.find(params[:id])
+    @voter_registration_action = VoterRegistrationAction.published.find(params[:id])
   end
 
   def new

@@ -1,4 +1,8 @@
 <h1>Edit action</h1>
 <%= form_for [:admin, @voter_registration_action] do |form| %>
+  <p>
+    <%= form.label :published %>
+    <%= form.check_box :published %>
+  </p>
   <%= render partial: 'voter_registration_actions/form', locals: {form: form} %>
 <% end %>
