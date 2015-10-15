@@ -10,3 +10,5 @@
     <li><%= link_to voter_registration_action.name, voter_registration_action %>: <%= voter_registration_action.distance_from(params[:location]).round(1) %> miles away</li>
   <% end %>
 </ul>
+
+<p><%= link_to "Add an event", new_voter_registration_action_path %></p>
