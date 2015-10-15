@@ -11,4 +11,31 @@
   <% end %>
 </ul>
 
+<div id="map" style="width:50%; height:350px;"></div>
+<script>
+  $(function() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      scrollwheel: false,
+      streetViewControl: false,
+      mapTypeControl: false,
+      zoom: 5,
+      center: {lat: 54.5, lng: -3}
+    });
+    <% @all_voter_registration_actions.each do |voter_registration_action| %>
+      var infowindow<%= voter_registration_action.id %> = new google.maps.InfoWindow({
+        content: '<%= link_to voter_registration_action.name, voter_registration_action_path(voter_registration_action) %>'
+      });
+
+      var marker<%= voter_registration_action.id %> = new google.maps.Marker({
+        position: {lat: <%= voter_registration_action.latitude %>, lng: <%= voter_registration_action.longitude %>},
+        map: map
+      });
+      marker<%= voter_registration_action.id %>.addListener('click', function() {
+        infowindow<%= voter_registration_action.id %>.open(map, marker<%= voter_registration_action.id %>);
+      });
+    <% end %>
+  })
+</script>
+
 <p><%= link_to "Add an event", new_voter_registration_action_path %></p>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>

@@ -1,5 +1,6 @@
 class VoterRegistrationActionsController < ApplicationController
   def index
+    @all_voter_registration_actions = VoterRegistrationAction.published
     if params[:location]
       @voter_registration_actions = VoterRegistrationAction.published.near(params[:location])
     else
