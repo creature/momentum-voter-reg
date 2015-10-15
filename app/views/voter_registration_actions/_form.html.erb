@@ -33,7 +33,7 @@
   </p>
   <p>
     <%= form.label :time, "Date and Time" %>
-    <%= form.text_field :time %>
+    <%= form.text_field :time, class: 'datepicker' %>
   </p>
   <p>
     <%= form.label :organiser_name %>
@@ -67,3 +67,9 @@
 
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script src="/javascripts/jquery-gmaps-latlon-picker.js"></script>
+<script src="/javascripts/jquery.datetimepicker.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $( ".datepicker" ).datetimepicker();
+  });
+</script>
