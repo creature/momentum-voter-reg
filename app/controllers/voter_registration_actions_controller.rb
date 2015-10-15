@@ -7,6 +7,10 @@ class VoterRegistrationActionsController < ApplicationController
     end
   end
 
+  def show
+    @voter_registration_action = VoterRegistrationAction.find(params[:id])
+  end
+
   def new
     @voter_registration_action = VoterRegistrationAction.new
   end
