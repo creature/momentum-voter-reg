@@ -1,4 +1,8 @@
 class Admin::VoterRegistrationActionsController < ApplicationController
+  if ENV["ADMIN_PASSWORD"]
+    http_basic_authenticate_with name: "momentum", password: ENV["ADMIN_PASSWORD"]
+  end
+  
   def index
     @unpublished_actions = VoterRegistrationAction.published.all
     @published_actions = VoterRegistrationAction.unpublished.all
