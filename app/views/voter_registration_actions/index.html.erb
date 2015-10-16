@@ -1,7 +1,7 @@
 <h1>Find your local voter registration drive</h1>
 
 <%= form_tag nil, method: :get do %>
-  <%= text_field_tag :location %>
+  <%= text_field_tag :location, params[:location] %>
   <%= submit_tag "Search" %>
 <% end %>
 
