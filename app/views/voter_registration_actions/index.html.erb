@@ -5,11 +5,13 @@
   <%= submit_tag "Search" %>
 <% end %>
 
-<ul>
-  <% @voter_registration_actions.each do |voter_registration_action| %>
-    <li><%= link_to voter_registration_action.name, voter_registration_action %>: <%= voter_registration_action.distance_from(params[:location]).round(1) %> miles away</li>
-  <% end %>
-</ul>
+<% if @search_results %>
+  <ul>
+    <% @search_results.each do |voter_registration_action| %>
+      <li><%= link_to voter_registration_action.name, voter_registration_action %>: <%= voter_registration_action.distance_from(params[:location]).round(1) %> miles away</li>
+    <% end %>
+  </ul>
+<% end %>
 
 <div id="map" style="width:50%; height:350px;"></div>
 <script>
@@ -18,8 +20,13 @@
       scrollwheel: false,
       streetViewControl: false,
       mapTypeControl: false,
-      zoom: 5,
-      center: {lat: 54.5, lng: -3}
+      <% if @search_location.present? %>
+        zoom: 10,
+        center: {lat: <%= @search_location.coordinates[0] %>, lng: <%= @search_location.coordinates[1] %>}
+      <% else %>
+        zoom: 5,
+        center: {lat: 54.5, lng: -3}
+      <% end %>
     });
     <% @all_voter_registration_actions.each do |voter_registration_action| %>
       var infowindow<%= voter_registration_action.id %> = new google.maps.InfoWindow({
