@@ -1,19 +1,56 @@
-<h1>Find your local voter registration drive</h1>
+<div class="row copy">
+    <p>Up to 1.9 million voters will drop off the electoral register on 1 December, according to a study by Hope Not Hate. This is because of the government’s introduction of ‘individual electoral registration’, replacing the current system where voters are registered by household.</p>
 
-<%= form_tag nil, method: :get do %>
-  <%= text_field_tag :location, params[:location] %>
-  <%= submit_tag "Search" %>
-<% end %>
+    <p>This means that from December people will need to have registered themselves individually to be able to vote in local and national elections. Individuals whose data cannot be confirmed using national insurance numbers will have to provide additional forms of identification.</p>
 
-<% if @search_results %>
-  <ul>
-    <% @search_results.each do |voter_registration_action| %>
-      <li><%= link_to voter_registration_action.name, voter_registration_action %>: <%= voter_registration_action.distance_from(params[:location]).round(1) %> miles away</li>
-    <% end %>
-  </ul>
-<% end %>
+    <p>It comes at a moment when the government is about to re-draw the electoral boundaries. The 1.9 million set to drop off the electoral roll will not count in deciding the new constituencies - that is one reason why it is urgent to register as many as possible now.</p>
+</div>
 
-<div id="map" style="width:50%; height:350px;"></div>
+<div class="page__search">
+  <div class="map">
+      <div class="map__search">
+        <%= form_tag nil, method: :get, class: 'row' do %>
+          <%= text_field_tag :location, params[:location], placeholder: "Find an event..." %>
+          <%= submit_tag "Search" %>
+        <% end %>
+      </div>
+      <% if @search_results %>
+        <div class="search_list">
+          <ul>
+            <% @search_results.each do |voter_registration_action| %>
+              <li><%= link_to voter_registration_action.name, voter_registration_action %>: <%= voter_registration_action.distance_from(params[:location]).round(1) %> miles away</li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div id="map" style="width:100%; height:350px;"></div>
+  </div>
+</div>
+
+<div class="copy--red">
+  <div class="row copy">
+    <h3>Key Facts</h3>
+
+    <ul>
+      <li>Those most likely to be disenfranchised by individual electoral registration are students, people not in work and people from backgrounds that are already underrepresented on the electoral register.
+      <li>London will lose as many as 415,013 voters - Hackney alone may lose 23%.
+      <li>Large cities like Birmingham and Glasgow are among those worst affected, losing 67,225 and 56,645 respectively.
+      <li>Scotland could lose 5.5% of voters.
+      <li>Many councils don’t have the money or resources to re-register voters.
+      <li>When the individual electoral registration drop-off is included, it is estimated that there will be 10 million eligible voters not on the electoral register.
+    </ul>
+  </div>
+</div>
+
+  <div class="row copy">
+    <h3>Democracy SOS</h3>
+
+    <p>Democracy SOS is a month-long campaign supported by Momentum to re-register those disenfranchised by individual electoral registration as well as registering new voters. We believe it’s vital to register voters to revitalise democracy and build a more progressive politics — these are the same goals which inspired Jeremy Corbyn’s election as Labour Party leader.</p>
+
+    <p>Democracy SOS will be launched with a national day of action for voter registration on 24 October. Momentum is calling on people to organise events, rallies and stalls to encourage people to register to vote, first on 24 October and then throughout the rest of the rest of October and November. Together we can put this issue on the map, and build a society where everyone is represented.</p>
+  </div>
+</div>
+
 <script>
   $(function() {
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -44,5 +81,4 @@
   })
 </script>
 
-<p><%= link_to "Add an event", new_voter_registration_action_path %></p>
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>

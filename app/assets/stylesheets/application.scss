@@ -1,0 +1,199 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* If the map DIV doesn't have a size set up, it won't appear on the page */
+.gllpMap	{ width: 500px; height: 250px; }
+
+$grey: #4d4d4d;
+
+html,
+body {
+    background-color: white;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    color: $grey;
+}
+
+h1, h2, h3, p {
+    color: $grey;
+    margin: 0;
+}
+
+h2, h3 {
+    margin: 15px 0;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+ul {
+}
+
+.header {
+    width: 100%;
+    min-height: 83px;
+    padding: 15px;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.25);
+
+    .tagline {
+        float: left;
+        display: block;
+        font-weight: bold;
+        margin: 15px 0 0 15px;
+        font-size: 18px;
+    }
+
+    a, a:visited {
+      color: $grey
+    }
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    li {
+        margin: 0;
+        float: left;
+    }
+
+    li:not(:last-child) {
+        margin-right: 15px;
+    }
+}
+
+.social {
+    float: right;
+    list-style-type: none;
+
+    .social__item {
+        float: left;
+        width: 52px;
+        height: 52px;
+        margin-left: 15px;
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        position: relative;
+    }
+
+    .social__item a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 3px;
+        color: white;
+
+        &:active,
+        &:focus,
+        &:visited {
+            color: white;
+        }
+    }
+
+    .social__item--facebook {
+        background-color: #0071bc;
+    }
+
+    .social__item--twitter {
+        background-color: #29abe2;
+    }
+}
+
+.copy {
+    padding: 25px;
+}
+
+.copy--red {
+    background-color: red;
+    color: white;
+
+    h3 {
+        color: white;
+    }
+}
+
+.page__search {
+    .search_list {
+        position: absolute;
+        right: 12%;
+        top: 100px;
+        background-color: white;
+        z-index: 99;
+        height: 300px;
+        width: 30%;
+        overflow: scroll;
+        padding: 10px;
+
+        ul {
+          list-style: none;
+          margin:0;
+          padding:0;
+          font-size: 1.4em;
+        }
+    }
+
+    .map {
+        width: 100%;
+        position: relative;
+    }
+
+    .map__search {
+        width: 100%;
+        height: 80px;
+        padding: 15px;
+        background-color: opacify($grey, 0.5);
+
+        form {
+            input {
+                float: left;
+                font-size: 20px;
+                padding: 10px;
+                margin: 0;
+            }
+
+            input[type=text] {
+                width: 80%;
+            }
+
+            input[type=submit] {
+                width: 17%;
+                margin-left: 2%;
+            }
+        }
+    }
+}
