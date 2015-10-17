@@ -1,13 +1,15 @@
-<h1><%= @voter_registration_action.name %></h1>
+<div class="row copy">
+  <h1><%= @voter_registration_action.name %></h1>
 
-<p>Meeting Point: <%= @voter_registration_action.meeting_point %></p>
-<p>Date and Time: <%= @voter_registration_action.time %></p>
-<p>Organiser Name: <%= @voter_registration_action.organiser_name %></p>
-<% if @voter_registration_action.organiser_phone_public? %>
-  <p>Organiser Phone: <%= @voter_registration_action.organiser_phone %></p>
-<% end %>
-<% if @voter_registration_action.organiser_email_public? %>
-  <p>Organiser Email: <%= @voter_registration_action.organiser_email %></p>
-<% end %>
-<p>Facebook Event Page: <%= @voter_registration_action.fb_event_page %></p>
-<p>Web Address: <%= @voter_registration_action.url %></p>
+  <p>Meeting Point: <%= @voter_registration_action.meeting_point %></p>
+  <p>Date and Time: <%= @voter_registration_action.time %></p>
+  <p>Organiser Name: <%= @voter_registration_action.organiser_name %></p>
+  <% if @voter_registration_action.organiser_phone_public? %>
+    <p>Organiser Phone: <%= @voter_registration_action.organiser_phone %></p>
+  <% end %>
+  <% if @voter_registration_action.organiser_email_public? %>
+    <p>Organiser Email: <%= @voter_registration_action.organiser_email %></p>
+  <% end %>
+  <p>Facebook Event Page: <%= link_to @voter_registration_action.fb_event_page, @voter_registration_action.fb_event_page %></p>
+  <p>Web Address: <%= link_to @voter_registration_action.url, @voter_registration_action.url %></p>
+</div>
