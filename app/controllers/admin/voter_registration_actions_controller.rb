@@ -4,8 +4,8 @@ class Admin::VoterRegistrationActionsController < ApplicationController
   end
 
   def index
-    @unpublished_actions = VoterRegistrationAction.published.all
-    @published_actions = VoterRegistrationAction.unpublished.all
+    @unpublished_actions = VoterRegistrationAction.unpublished.all
+    @published_actions = VoterRegistrationAction.published.all
   end
 
   def new
