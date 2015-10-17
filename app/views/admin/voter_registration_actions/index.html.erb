@@ -1,11 +1,13 @@
-In need of moderation
+<p><%= link_to "add new event", new_admin_voter_registration_action_path %></p>
+
+<h2>In need of moderation</h2>
 <ul>
   <% @unpublished_actions.each do |voter_registration_action| %>
     <li><%= link_to voter_registration_action.name, edit_admin_voter_registration_action_path(voter_registration_action) %></li>
   <% end %>
 </ul>
 
-Published
+<h2>Published</h2>
 <ul>
   <% @published_actions.each do |voter_registration_action| %>
     <li><%= link_to voter_registration_action.name, edit_admin_voter_registration_action_path(voter_registration_action) %></li>

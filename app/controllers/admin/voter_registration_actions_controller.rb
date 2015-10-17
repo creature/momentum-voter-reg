@@ -2,10 +2,19 @@ class Admin::VoterRegistrationActionsController < ApplicationController
   if ENV["ADMIN_PASSWORD"]
     http_basic_authenticate_with name: "momentum", password: ENV["ADMIN_PASSWORD"]
   end
-  
+
   def index
     @unpublished_actions = VoterRegistrationAction.published.all
     @published_actions = VoterRegistrationAction.unpublished.all
+  end
+
+  def new
+    @voter_registration_action = VoterRegistrationAction.new
+  end
+
+  def create
+    @voter_registration_action = VoterRegistrationAction.create(voter_registration_action_params)
+    redirect_to action: :index
   end
 
   def edit
