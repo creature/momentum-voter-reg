@@ -18,6 +18,7 @@ class VoterRegistrationActionsController < ApplicationController
 
   def create
     @voter_registration_action = VoterRegistrationAction.create(voter_registration_action_params)
+    flash[:success] = true
     redirect_to action: :index
   end
 
