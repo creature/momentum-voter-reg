@@ -1,4 +1,6 @@
-<h1>Create a new action</h1>
-<%= form_for @voter_registration_action do |form| %>
-  <%= render partial: 'form', locals: {form: form} %>
-<% end %>
+<div class="row copy new_event">
+  <h1>Create an event</h1>
+  <%= form_for @voter_registration_action do |form| %>
+    <%= render partial: 'form', locals: {form: form} %>
+  <% end %>
+</div>

@@ -1,17 +1,21 @@
-  <p>
-    <%= form.label :name %>
-    <p>Give the action a basic name</p>
+  <h2>Name the event</h2>
+  <p class="field_group">
+    <%= form.label :name, "Event Name" %>
     <%= form.text_field :name %>
+    <p>Give the action a basic name</p>
   </p>
 
-  <fieldset class="gllpLatlonPicker">
-    <legend>Location</legend>
+  <hr />
+  <div class="gllpLatlonPicker">
+    <h2>Location</h2>
     <p>This is used for placing the event on a map, and for searching for events near you.</p>
     <p>Search for the location of you event, (e.g. by post code), and this will autofill the latitude and longitude of the location</p>
     <p>Feel free to drag the pin to an exact location</p>
-    <label for="location_search">Location search</label>
-    <input type="text" class="gllpSearchField" id="location_search">
-    <input type="button" class="gllpSearchButton" value="search">
+    <p class="field_group">
+      <label for="location_search">Location search</label>
+      <input type="text" class="gllpSearchField" id="location_search">
+      <input type="button" class="gllpSearchButton" value="search">
+    </p>
     <div class="gllpMap">Google Maps</div>
     <input type="hidden" class="gllpZoom" value="5"/>
 
@@ -23,53 +27,57 @@
       <%= form.label :longitude %>
       <%= form.text_field :longitude, class: 'gllpLongitude' %>
     </p>
-  </fieldset>
+  </div>
 
-  <p>
-    <%= form.label :meeting_point %>
-    <p>This is used as a more human description of the meeting point. This can either be a full address, or description eg: "outside Sainsbury's"</p>
+  <hr />
+  <h2>Meeting point</h2>
+  <p>This is used as a more human description of the meeting point. This can either be a full address, or description eg: "outside Sainsbury's"</p>
+  <p class="field_group">
+    <%= form.label :meeting_point, "Friendly Name" %>
     <%= form.text_area :meeting_point %>
   </p>
-  <p>
+  <p class="field_group">
     <%= form.label :time, "Date and Time" %>
     <%= form.text_field :time, class: 'datepicker' %>
   </p>
-  <p>
+  <p class="field_group">
     <%= form.label :organiser_name %>
     <%= form.text_field :organiser_name %>
   </p>
-  <p>
+  <p class="field_group">
     <%= form.label :organiser_email %>
     <%= form.text_field :organiser_email %>
   </p>
-  <p>
+  <p class="field_group">
     <%= form.label :organiser_email_public, "Can we publish this email address online?" %>
     <%= form.check_box :organiser_email_public %>
   </p>
-  <p>
+  <p class="field_group">
     <%= form.label :organiser_phone %>
     <%= form.text_field :organiser_phone %>
   </p>
-  <p>
+  <p class="field_group">
     <%= form.label :organiser_phone_public, "Can we publish this phone number online?" %>
     <%= form.check_box :organiser_phone_public %>
   </p>
-  <p>
+  <p class="field_group">
     <%= form.label :organiser_address %>
     <%= form.text_area :organiser_address %>
   </p>
-  <p>
+  <p class="field_group">
     <%= form.label :fb_event_page %>
     <%= form.text_field :fb_event_page %>
   </p>
-  <p>
+  <p class="field_group">
     <%= form.label :url %>
     <%= form.text_field :url %>
   </p>
 
   <p>
-    <%= form.submit %>
+    <%= form.submit "Create your event" %>
   </p>
+
+  <hr />
 
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script src="/javascripts/jquery-gmaps-latlon-picker.js"></script>
