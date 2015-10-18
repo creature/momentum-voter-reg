@@ -4,5 +4,32 @@
     <%= form.label :published %>
     <%= form.check_box :published %>
   </p>
+  <hr />
+  <div class="gllpLatlonPicker">
+    <h2>Location</h2>
+    <p>This is used for placing the event on a map, and for searching for events near you.</p>
+    <p>Search for the location of you event, (e.g. by post code), and this will autofill the latitude and longitude of the location</p>
+    <p>Feel free to drag the pin to an exact location</p>
+    <p class="field_group">
+      <label for="location_search">Location search</label>
+      <input type="text" class="gllpSearchField" id="location_search">
+      <input type="button" class="gllpSearchButton" value="search">
+    </p>
+    <div class="gllpMap">Google Maps</div>
+    <input type="hidden" class="gllpZoom" value="5"/>
+
+    <p>
+      <%= form.label :latitude %>
+      <%= form.text_field :latitude, class: 'gllpLatitude' %>
+    </p>
+    <p>
+      <%= form.label :longitude %>
+      <%= form.text_field :longitude, class: 'gllpLongitude' %>
+    </p>
+  </div>
+
   <%= render partial: 'voter_registration_actions/form', locals: {form: form} %>
 <% end %>
+
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="/javascripts/jquery-gmaps-latlon-picker.js"></script>

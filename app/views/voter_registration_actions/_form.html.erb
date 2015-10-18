@@ -1,39 +1,10 @@
-  <h2>Name the event</h2>
   <p class="field_group">
     <%= form.label :name, "Event Name" %>
     <%= form.text_field :name %>
-    <p>Give the action a basic name</p>
   </p>
-
-  <hr />
-  <div class="gllpLatlonPicker">
-    <h2>Location</h2>
-    <p>This is used for placing the event on a map, and for searching for events near you.</p>
-    <p>Search for the location of you event, (e.g. by post code), and this will autofill the latitude and longitude of the location</p>
-    <p>Feel free to drag the pin to an exact location</p>
-    <p class="field_group">
-      <label for="location_search">Location search</label>
-      <input type="text" class="gllpSearchField" id="location_search">
-      <input type="button" class="gllpSearchButton" value="search">
-    </p>
-    <div class="gllpMap">Google Maps</div>
-    <input type="hidden" class="gllpZoom" value="5"/>
-
-    <p>
-      <%= form.label :latitude %>
-      <%= form.text_field :latitude, class: 'gllpLatitude' %>
-    </p>
-    <p>
-      <%= form.label :longitude %>
-      <%= form.text_field :longitude, class: 'gllpLongitude' %>
-    </p>
-  </div>
-
-  <hr />
-  <h2>Meeting point</h2>
-  <p>This is used as a more human description of the meeting point. This can either be a full address, or description eg: "outside Sainsbury's"</p>
   <p class="field_group">
-    <%= form.label :meeting_point, "Friendly Name" %>
+    <%= form.label :meeting_point, "Meeting point" %>
+    <p>Please describe the meeting point for the event. This can either be a full address, or description eg: "outside Sainsbury's". We will use this to add it to the map.</p>
     <%= form.text_area :meeting_point %>
   </p>
   <p class="field_group">
@@ -79,8 +50,6 @@
 
   <hr />
 
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-<script src="/javascripts/jquery-gmaps-latlon-picker.js"></script>
 <script src="/javascripts/jquery.datetimepicker.min.js"></script>
 <script type="text/javascript">
   $(function() {
