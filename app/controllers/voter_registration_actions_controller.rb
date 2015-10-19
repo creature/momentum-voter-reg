@@ -2,7 +2,7 @@ class VoterRegistrationActionsController < ApplicationController
   def index
     @all_voter_registration_actions = VoterRegistrationAction.published
     if params[:location]
-      @search_location = Geocoder.search(params[:location]).first
+      @search_location = Geocoder.search(params[:location], region: 'gb').first
       render text: "We're having trouble finding that location" and return unless @search_location.present?
       @search_results = VoterRegistrationAction.published.near(@search_location.coordinates)
     end
