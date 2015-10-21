@@ -31,7 +31,7 @@
   <%= render partial: 'voter_registration_actions/form', locals: {form: form} %>
 <% end %>
 <%= form_for [:admin, @voter_registration_action], method: :delete do |form| %>
-  <%= form.submit "Delet this event", data: { confirm: "Are you sure? This is irriversible!" } %>
+  <%= form.submit "Delete this event", data: { confirm: "Are you sure? This is irreversible!" } %>
 <% end %>
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script src="/javascripts/jquery-gmaps-latlon-picker.js"></script>
