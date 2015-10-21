@@ -19,6 +19,8 @@
 
 $grey: #4d4d4d;
 $red: rgb(191, 41, 50);
+$alert: rgb(242, 120, 75);
+$success: rgb(144, 198, 149);
 
 html,
 body {
@@ -139,6 +141,24 @@ hr {
 
   .social__item--twitter {
     background-color: #29abe2;
+  }
+}
+
+.flash {
+  margin: 1rem auto;
+  padding:  0.5rem;
+  max-width: 60%;
+  border-radius: 3px;
+  color: black;
+
+  &.alert {
+    background-color: $alert;
+    border: 1px solid red;
+  }
+
+  &.notice {
+    background-color: $success;
+    border: 1px solid green;
   }
 }
 

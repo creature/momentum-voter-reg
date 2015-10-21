@@ -27,6 +27,13 @@
       </ul>
   </div>
 
+  <% unless flash.notice.blank? %>
+      <p class="flash notice"><%= flash.notice %></p>
+  <% end %>
+  <% unless flash.alert.blank? %>
+      <p class="flash alert"><%= flash.alert %></p>
+  <% end %>
+
   <%= yield %>
 
   <script>
