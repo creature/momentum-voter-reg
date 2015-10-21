@@ -17,9 +17,13 @@ class VoterRegistrationActionsController < ApplicationController
   end
 
   def create
-    @voter_registration_action = VoterRegistrationAction.create(voter_registration_action_params)
-    flash[:success] = true
-    redirect_to action: :index
+    @voter_registration_action = VoterRegistrationAction.new(voter_registration_action_params)
+    if @voter_registration_action.save
+      redirect_to action: :index, success: true
+    else
+      flash[:alert] = "Sorry, we couldn't create that event."
+      render :new
+    end
   end
 
   private

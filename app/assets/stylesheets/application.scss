@@ -19,8 +19,8 @@
 
 $grey: #4d4d4d;
 $red: rgb(191, 41, 50);
-$alert: rgb(242, 120, 75);
-$success: rgb(144, 198, 149);
+$alert-red: rgb(242, 120, 75);
+$success-green: rgb(144, 198, 149);
 
 html,
 body {
@@ -64,6 +64,13 @@ hr {
   color: $red;
   height: 3px;
   border: 0;
+}
+
+form {
+  .field_group .field_with_errors input {
+    border: 3px solid $alert-red;
+    padding: 0.5rem;
+  }
 }
 
 .header {
@@ -152,14 +159,21 @@ hr {
   color: black;
 
   &.alert {
-    background-color: $alert;
+    background-color: $alert-red;
     border: 1px solid red;
   }
 
   &.notice {
-    background-color: $success;
+    background-color: $success-green;
     border: 1px solid green;
   }
+}
+
+#error_explanation {
+  border: 1px solid $alert-red;
+  border-radius: 3px;
+  padding: 0.5rem;
+  margin: 1rem 0;
 }
 
 .copy {

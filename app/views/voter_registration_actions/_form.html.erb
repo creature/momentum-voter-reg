@@ -1,52 +1,50 @@
-  <p class="field_group">
+  <div class="field_group">
     <%= form.label :name, "Event Name" %>
     <%= form.text_field :name %>
-  </p>
-  <p class="field_group">
+  </div>
+  <div class="field_group">
     <%= form.label :meeting_point, "Meeting point" %>
     <p>Please describe the meeting point for the event. This can either be a full address, or description eg: "outside Sainsbury's". We will use this to add it to the map.</p>
     <%= form.text_area :meeting_point %>
-  </p>
-  <p class="field_group">
+  </div>
+  <div class="field_group">
     <%= form.label :time, "Date and Time" %>
     <%= form.text_field :time, class: 'datepicker' %>
-  </p>
-  <p class="field_group">
+  </div>
+  <div class="field_group">
     <%= form.label :organiser_name %>
     <%= form.text_field :organiser_name %>
-  </p>
-  <p class="field_group">
+  </div>
+  <div class="field_group">
     <%= form.label :organiser_email %>
     <%= form.text_field :organiser_email %>
-  </p>
-  <p class="field_group">
+  </div>
+  <div class="field_group">
     <%= form.label :organiser_email_public, "Can we publish this email address online?" %>
     <%= form.check_box :organiser_email_public %>
-  </p>
-  <p class="field_group">
+  </div>
+  <div class="field_group">
     <%= form.label :organiser_phone %>
     <%= form.text_field :organiser_phone %>
-  </p>
-  <p class="field_group">
+  </div>
+  <div class="field_group">
     <%= form.label :organiser_phone_public, "Can we publish this phone number online?" %>
     <%= form.check_box :organiser_phone_public %>
-  </p>
-  <p class="field_group">
+  </div>
+  <div class="field_group">
     <%= form.label :organiser_address %>
     <%= form.text_area :organiser_address %>
-  </p>
-  <p class="field_group">
+  </div>
+  <div class="field_group">
     <%= form.label :fb_event_page %>
     <%= form.text_field :fb_event_page %>
-  </p>
-  <p class="field_group">
+  </div>
+  <div class="field_group">
     <%= form.label :url %>
     <%= form.text_field :url %>
-  </p>
+  </div>
 
-  <p>
-    <%= form.submit "Create your event" %>
-  </p>
+  <%= form.submit "Create your event" %>
 
   <hr />
 

@@ -1,6 +1,17 @@
 <div class="row copy new_event">
   <h1>Create an event</h1>
   <%= form_for @voter_registration_action do |form| %>
+    <% if @voter_registration_action.errors.any? %>
+      <div id="error_explanation">
+        <p>You must fix the following before we can create your event:
+        <ul>
+        <% @voter_registration_action.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <%= render partial: 'form', locals: {form: form} %>
   <% end %>
 </div>
